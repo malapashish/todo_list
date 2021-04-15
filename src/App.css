@@ -41,12 +41,12 @@ body {
   width: 400px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700x) {
   .main_container {
-    width: 400px;
+    width: 300px;
   }
 
   .input_field {
-    width: 300px;
+    width: 200px;
   }
 }
