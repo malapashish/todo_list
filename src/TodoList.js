@@ -16,7 +16,7 @@ const ToDoList = ({id , progress , todo , bg}) =>{
         db.collection("todos").doc(id).delete();
     }
     return( 
-        <div style = {{display : 'flex' , flexDirection : 'row' , justifyContent : 'space-around' , marginTop : '10px' ,  marginBottom : '10px' , borderStyle : 'solid'}}>
+        <div style = {{display : 'flex' , flexDirection : 'row' , justifyContent : 'space-around' , marginTop : '10px' ,  marginBottom : '10px' , borderStyle : 'solid' , fontSize : '10px'}}>
                      <ListItem>
                          <ListItemText primary = {todo}
                           secondary = {progress ? "In Progress⌚" : "Completed✅"} />

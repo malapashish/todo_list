@@ -44,9 +44,10 @@ body {
 @media only screen and (max-width: 768px) {
   .main_container {
     width: 300px;
+    font-size: 15px;
   }
 
   .input_field {
-    width: 200px;
+    width: 150px;
   }
 }
