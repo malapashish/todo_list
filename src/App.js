@@ -31,19 +31,22 @@ const App =  () => {
     }, [])
  
 
-    const toDoInputHandler = (e) => {
-        setToDOInput(e.target.value);
-        console.log(toDoInput);
+    const toDoInputHandler = (e) => { 
+        setToDOInput(e.target.value); 
     }
 
     const addToDoToDb = (e) => {
+        console.log(toDoInput.length);
+        if(toDoInput.length === 0){
+            alert("Please Enter a todo");
+        }else{
         e.preventDefault();
         db.collection("todos").add({
             progress : true,
             timestamp : firebase.firestore.FieldValue.serverTimestamp(),
             todo : toDoInput
         });
-        
+    }
         setToDOInput('');
     }
 
