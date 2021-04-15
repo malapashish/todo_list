@@ -61,9 +61,7 @@ const App =  () => {
             }))
             )
         })
-    }
-
-     
+    } 
 
     return(
         <div className = "main_container">
@@ -76,7 +74,7 @@ const App =  () => {
             <Button variant="contained" color="secondary" startIcon={<AddIcon />} onClick = {addToDoToDb} className={classes.button}/> 
              {
                  toDoList.map((todo) =>
-                     <ToDoList id = {todo.id} progress = {todo.progress} todo = {todo.todo} />
+                     <ToDoList id = {todo.id} progress = {todo.progress} todo = {todo.todo}  />
                  
                  )
              } 
