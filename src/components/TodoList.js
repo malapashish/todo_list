@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ListItem, ListItemText } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import { db } from './firebaseConfig'; 
+import { db } from '../firebaseConfig'; 
 
 const ToDoList = ({id , progress , todo  }) =>{
     const toggleProgress = () => {
@@ -17,12 +17,14 @@ const ToDoList = ({id , progress , todo  }) =>{
         db.collection("todos").doc(id).delete();
     }
     return( 
-        <div style = {{display : 'flex' , flexDirection : 'row' , justifyContent : 'space-around' , marginTop : '10px' ,  marginBottom : '10px' , borderStyle : 'solid' , fontSize : '10px'}}>
+        <div className = 'mainDiv'  style = {{display : 'flex' , flexDirection : 'row' , justifyContent : 'space-around' , marginTop : '10px' ,  marginBottom : '10px' , borderStyle : 'solid' , fontSize : '10px'}}>
                      <ListItem>
                          <ListItemText primary = {todo} 
                           secondary = {progress ? "In Progress⌚" : "Completed✅"} />
                      </ListItem>
-                     <Button onClick = {toggleProgress}>
+                     <Button
+                     onClick = {toggleProgress} 
+                     >
                          {progress ? "Done" : "UnDone"}
                      </Button>
                      <Button onClick = {deletToDO}>

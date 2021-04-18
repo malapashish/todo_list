@@ -7,10 +7,10 @@ import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles'; 
 import {db} from "./firebaseConfig";
-import firebase from "firebase";
+import firebase from "firebase"; 
 
 
-import ToDoList from './TodoList';
+import ToDoList from './components/TodoList'; 
 
 const App =  () => { 
     const useStyles = makeStyles((theme) => ({
@@ -25,7 +25,7 @@ const App =  () => {
     const [toDoInput , setToDOInput] = useState('');
 
     const [toDoList , setToDoList] = useState([]);
-
+ 
     useEffect(() => {
         fetchToDoList();
     }, [])
@@ -62,25 +62,26 @@ const App =  () => {
             )
         })
     } 
+ 
 
-    return(
+    return(  
         <div className = "main_container">
-            <h1>Todo List</h1>
+            <h1>Todo List</h1>  
             <div>
-            <form onSubmit = {addToDoToDb}>
-             <TextField id="standard-basic" label="Write a todo" 
-             className = "input_field" onChange = {toDoInputHandler} 
-             value = {toDoInput}  />
-            <Button variant="contained" color="secondary" startIcon={<AddIcon />} onClick = {addToDoToDb} className={classes.button}/> 
-             {
-                 toDoList.map((todo) =>
-                     <ToDoList id = {todo.id} progress = {todo.progress} todo = {todo.todo}  />
-                 
-                 )
-             } 
-             </form> 
-             </div>          
-       </div>
+                <form onSubmit = {addToDoToDb}>
+                    <TextField id="standard-basic" label="Write a todo" 
+                    className = "input_field" onChange = {toDoInputHandler} 
+                    value = {toDoInput}  />
+                        <Button variant="contained" color="secondary" startIcon={<AddIcon />} onClick = {addToDoToDb} className={classes.button}/> 
+                        {
+                            toDoList.map((todo) =>
+                                <ToDoList id = {todo.id} progress = {todo.progress} todo = {todo.todo}  />
+                            
+                            )
+                        } 
+                </form> 
+            </div>          
+        </div> 
     )
 };
 
