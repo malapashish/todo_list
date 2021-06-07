@@ -74,9 +74,9 @@ const App =  () => {
                     value = {toDoInput}  />
                         <Button variant="contained" color="secondary" startIcon={<AddIcon />} onClick = {addToDoToDb} className={classes.button}/> 
                         {
-                            toDoList.map((todo) =>
+                            toDoList.map(
+                                (todo) =>
                                 <ToDoList id = {todo.id} progress = {todo.progress} todo = {todo.todo}  />
-                            
                             )
                         } 
                 </form> 
